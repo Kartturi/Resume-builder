@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+/*edit-preview*/
+.edit-preview {
+  background-color: gray;
+}
+/*edit-preview end*/
+
+/*cv begin */
+.resume1 {
+  width: 21cm;
+  min-height: 29cm;
+  background-color: white;
+  margin: 60px auto 0px auto;
+}
+
+
+/*cv end */
+
+
