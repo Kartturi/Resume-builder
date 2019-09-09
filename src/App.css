@@ -32,6 +32,20 @@
   }
 }
 
+/*edit-input*/
+.edit-input {
+  width: 30%;
+  height: 100%;
+  background: green;
+}
+
+.edit-input input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+/*edit-input end*/
+
 /*edit-preview*/
 .edit-preview {
   background-color: gray;
@@ -46,7 +60,17 @@
   margin: 60px auto 0px auto;
 }
 
+.resume1-lower-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.resume1-left {
+  width: 70%;
+}
+
+.resume1-right {
+  width: 30%;
+}
 
 /*cv end */
-
-
