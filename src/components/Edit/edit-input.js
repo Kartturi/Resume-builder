@@ -1,9 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useStateValue } from "../../state";
 
-const EditInput = props => {
-  let output = props.setOutput;
-  let saveData = props.save;
-  console.log(output, "from edit input");
+//util
+import getActionType from "../../utils/getActionType";
+import Link from "./edit-input/link";
+
+const EditInput = () => {
+  const [state, dispatch] = useStateValue();
+
+  function useDispatch(e) {
+    dispatch({
+      type: getActionType(e.target.name),
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function saveResumeToLocalStorage() {
+    localStorage.setItem("resume", JSON.stringify(state));
+  }
+
   return (
     <div className="edit-input">
       <h2>Edit resume</h2>
@@ -11,42 +26,35 @@ const EditInput = props => {
       <label>
         <h4>Name</h4>
         <input
-          onChange={props.getInput}
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
           type="text"
           name="name"
           className=""
-          value={output.name}
+          value={state.name}
         />
       </label>
-      <label>
-        <h4>Title</h4>
-        <input
-          onChange={props.getInput}
-          type="text"
-          name="title"
-          className=""
-          placeholder="title"
-          value={output.title}
-        />
-      </label>
+
       <label>
         <input
-          onChange={props.getInput}
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
           type="text"
-          name="personalInfoTitle"
-          className=""
-          value={output.personalInfoTitle}
+          name="personal"
+          className="edit-input__title"
+          value={state.personal}
         />
       </label>
       <label>
         <h4>Phone</h4>
         <input
-          onChange={props.getInput}
-          type="text"
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
+          type="phone"
           name="phone"
           className=""
           placeholder="phone"
-          value={output.phone}
+          value={state.phone}
         />
       </label>
 
@@ -54,33 +62,48 @@ const EditInput = props => {
         <h4>Email</h4>
 
         <input
-          onChange={props.getInput}
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
           type="email"
           name="email"
           className=""
           placeholder="email"
-          value={output.email}
+          value={state.email}
         />
       </label>
+      <label>
+        <h4>Title</h4>
+        <input
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
+          type="text"
+          name="title"
+          className=""
+          value={state.title}
+        />
+      </label>
+      <Link func={{ useDispatch, saveResumeToLocalStorage }} />
 
       <label>
         <input
-          onChange={props.getInput}
+          className="edit-input__title"
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
           type="text"
           name="profileTitle"
-          value={output.profileTitle}
+          value={state.profileTitle}
         />
       </label>
       <label>
         <textarea
-          onChange={props.getInput}
+          rows="10"
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
           type="text"
           name="profile"
-          value={output.profile}
+          value={state.profile}
         />
       </label>
-
-      <button onClick={saveData}>Save</button>
     </div>
   );
 };

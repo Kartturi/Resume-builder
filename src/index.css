@@ -20,6 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gray;
 }
 
 /* Edit start */
@@ -31,12 +32,6 @@ body {
   flex-direction: row;
 }
 
-.edit-input {
-  width: 30%;
-  height: 100%;
-  background: green;
-}
-
 .edit-preview {
   width: 70%;
   height: 100%;
@@ -44,3 +39,33 @@ body {
 }
 
 /* Edit end */
+
+/*edit-input*/
+.edit-input {
+  width: 30%;
+  height: 100%;
+  background: green;
+  overflow-x: auto;
+}
+
+.edit-input h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.edit-input__title {
+  background: green;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  cursor: text;
+}
+
+.edit-input input,
+.edit-input textarea {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 80%;
+}
+/*edit-input end*/

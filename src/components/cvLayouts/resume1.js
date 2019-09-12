@@ -1,20 +1,20 @@
 import React from "react";
-
+import { useStateValue } from "../../state";
 const Resume1 = props => {
-  let output = props.setOutput;
-
+  const [state] = useStateValue();
+  console.log(state, "Store");
   return (
     <div className="cv resume1">
       <div className="resume1-profile">
-        <h1>{output.name}</h1>
-        <p>{output.title}</p>
+        <h1>{state.name}</h1>
+        <p>{state.title}</p>
       </div>
       <div className="resume1-lower-container">
         <div className="resume1-left">
-          {output.profile ? (
+          {state.profile ? (
             <div className="resume1-profile">
-              <h2>{output.profileTitle}</h2>
-              <p>{output.profile}</p>
+              <h2>{state.profileTitle}</h2>
+              <p>{state.profile}</p>
             </div>
           ) : (
             ""
@@ -31,16 +31,21 @@ const Resume1 = props => {
           </div>
         </div>
         <div className="resume1-right">
-          {output.email || output.phone ? (
+          {state.email || state.phone ? (
             <div className="resume1-personalInfo">
-              <h3>{output.personalInfoTitle}</h3>
-              <p>{output.email}</p>
-              <p>{output.phone}</p>
+              <h3>{state.personal}</h3>
+              <p>{state.email}</p>
+              <p>{state.phone}</p>
               <p></p>
             </div>
           ) : (
             ""
           )}
+          <div className="resume1-links">
+            <h3>{state.linkTitle}</h3>
+            <p>{state.link}</p>
+            <p></p>
+          </div>
         </div>
       </div>
     </div>
