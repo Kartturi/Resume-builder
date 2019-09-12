@@ -2,7 +2,12 @@ import React from "react";
 import { useStateValue } from "../../state";
 const Resume1 = props => {
   const [state] = useStateValue();
-  console.log(state, "Store");
+  console.log(state.link[0].length, "Store");
+
+  const ListItem = state.link.map((item, index) => {
+    return <li key={index}>{item}</li>;
+  });
+
   return (
     <div className="cv resume1">
       <div className="resume1-profile">
@@ -41,11 +46,15 @@ const Resume1 = props => {
           ) : (
             ""
           )}
-          <div className="resume1-links">
-            <h3>{state.linkTitle}</h3>
-            <p>{state.link}</p>
-            <p></p>
-          </div>
+          {state.link[0].length > 0 ? (
+            <div className="resume1-links">
+              <h3>{state.linkTitle}</h3>
+              <ul>{ListItem}</ul>
+              <p></p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

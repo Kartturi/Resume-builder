@@ -68,4 +68,23 @@ body {
   padding: 15px;
   width: 80%;
 }
+
+.edit-input__button {
+  font-size: 24px;
+  margin: 10px;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  color: white;
+}
+
+.edit-input__button_add {
+  background-color: blue;
+}
+.edit-input__button_minus {
+  background-color: red;
+}
+
+.edit-input__link ul {
+}
+
 /*edit-input end*/

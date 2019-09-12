@@ -25,7 +25,7 @@ function App() {
       profileTitle: "Profiili",
       profile: "",
       linkTitle: "Linkit",
-      link: ""
+      link: [""]
     };
   }
 
