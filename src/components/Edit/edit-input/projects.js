@@ -1,15 +1,14 @@
 import React from "react";
 import { useStateValue } from "../../../state";
-import getActionType from "../../../utils/getActionType";
-import { isArray } from "util";
 
-const Work = props => {
+const Projects = props => {
   const [state, dispatch] = useStateValue();
 
   const { useDispatch, saveResumeToLocalStorage } = props.func;
+
   const changeStateValue = e => {
     //make totally new array
-    const newWorkStateCopy = state.work.concat();
+    const newWorkStateCopy = state.projects.concat();
     const currentResumeNum = e.target.dataset.listId;
     const currentResumeInput = e.target.name;
     const newInputValue = e.target.value;
@@ -17,18 +16,20 @@ const Work = props => {
     newWorkStateCopy[currentResumeNum][currentResumeInput] = newInputValue;
 
     dispatch({
-      type: "CHANGE_WORK",
-      work: newWorkStateCopy
+      type: "CHANGE_PROJECTS",
+      projects: newWorkStateCopy
     });
   };
-  const ListItem = state.work.map((item, index) => {
+
+  const ListItem = state.projects.map((item, index) => {
+    console.log(item, "inside map");
     return (
       <li key={index}>
-        <h4>Position</h4>
+        <h4>Name</h4>
         <input
           type="text"
-          name="position"
-          value={item.position}
+          name="name"
+          value={item.name}
           data-list-id={index}
           onChange={changeStateValue}
           onBlur={saveResumeToLocalStorage}
@@ -56,41 +57,40 @@ const Work = props => {
   });
 
   const handleClick = e => {
-    let newArray = state.work.concat();
+    let newArray = state.projects.concat();
     if (e.target.textContent === "+") {
-      newArray.push({ position: "", time: "", desc: "" });
+      newArray.push({ project: "", time: "", desc: "" });
     } else {
       newArray.pop();
     }
 
     dispatch({
-      type: "CHANGE_WORK",
-      work: newArray
+      type: "CHANGE_PROJECTS",
+      projects: newArray
     });
   };
 
   return (
-    <div className="edit-input__work">
+    <div className="edit-input__projects">
       <label>
         <input
           onChange={useDispatch}
           onBlur={saveResumeToLocalStorage}
           type="text"
-          name="workTitle"
+          name="projectsTitle"
           className="edit-input__title"
-          value={state.workTitle}
+          value={state.projectsTitle}
         />
       </label>
 
       <ul>{ListItem}</ul>
       <button
         onClick={handleClick}
-        name="link"
         className="edit-input__button edit-input__button_add"
       >
         +
       </button>
-      {state.work.length > 1 ? (
+      {state.projects.length > 1 ? (
         <button
           onClick={handleClick}
           name="link"
@@ -105,4 +105,4 @@ const Work = props => {
   );
 };
 
-export default Work;
+export default Projects;

@@ -2,7 +2,6 @@ import React from "react";
 import { useStateValue } from "../../state";
 const Resume1 = props => {
   const [state] = useStateValue();
-  console.log(state.link[0].length, "Store");
 
   const ListItem = state.link.map((item, index) => {
     return <li key={index}>{item}</li>;
@@ -22,6 +21,36 @@ const Resume1 = props => {
     return (
       <li key={index}>
         <h4>{item.school}</h4>
+        <p>{item.time}</p>
+        <p>{item.desc}</p>
+      </li>
+    );
+  });
+
+  const LanguageListItem = state.language.map((item, index) => {
+    return (
+      <li key={index}>
+        <p>
+          {item.language} <span>{item.level}</span>
+        </p>
+      </li>
+    );
+  });
+
+  const recommendsListItem = state.recommends.map((item, index) => {
+    return (
+      <li key={index}>
+        <h4>{item.nameRecommends}</h4>
+        <p>{item.phoneRecommends}</p>
+        <p>{item.email}</p>
+      </li>
+    );
+  });
+  const projectsListItem = state.projects.map((item, index) => {
+    console.log(item);
+    return (
+      <li key={index}>
+        <h4>{item.name}</h4>
         <p>{item.time}</p>
         <p>{item.desc}</p>
       </li>
@@ -54,7 +83,16 @@ const Resume1 = props => {
             <h2>{state.educationTitle}</h2>
             <ul>{EducationListItem}</ul>
           </div>
+          <div className="resume1-projects ">
+            <h2>{state.projectsTitle}</h2>
+            <ul>{projectsListItem}</ul>
+          </div>
+          <div className="resume1-recommends ">
+            <h2>{state.recommendsTitle}</h2>
+            <ul>{recommendsListItem}</ul>
+          </div>
         </div>
+
         <div className="resume1-right">
           {state.email || state.phone ? (
             <div className="resume1-personalInfo">
@@ -78,6 +116,11 @@ const Resume1 = props => {
           <div className="resume1-hobbies">
             <h3>{state.hobbiesTitle}</h3>
             <ul>{state.hobbies}</ul>
+            <p></p>
+          </div>
+          <div className="resume1-language">
+            <h3>{state.languageTitle}</h3>
+            <ul>{LanguageListItem}</ul>
             <p></p>
           </div>
         </div>

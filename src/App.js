@@ -37,7 +37,21 @@ function App() {
           time: "syyskuu 2019 - joulukuu 2017",
           desc: "kansainvälinen kauppa"
         }
-      ]
+      ],
+      recommendsTitle: "Suositukset",
+      recommends: [
+        {
+          nameRecommends: "Ari",
+          phoneRecommends: "05050",
+          email: "hotmail.com"
+        }
+      ],
+      projectsTitle: "Projektit",
+      projects: [
+        { name: "Thedasgame", time: "", desc: "opettele saksan kielen sanoja" }
+      ],
+      languageTitle: "Kielet",
+      language: [{ language: "Suomi", level: "Äidinkieli" }]
     };
   }
 

@@ -37,6 +37,15 @@ function getActionType(type) {
     case "educationTitle":
       return "CHANGE_EDUCATIONTITLE";
 
+    case "recommendsTitle":
+      return "CHANGE_RECOMMENDSTITLE";
+
+    case "projectsTitle":
+      return "CHANGE_PROJECTSTITLE";
+
+    case "languageTitle":
+      return "CHANGE_languageTitle";
+
     default:
       return "";
   }

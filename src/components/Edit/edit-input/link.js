@@ -6,7 +6,6 @@ const Link = props => {
   const [state, dispatch] = useStateValue();
   //   const { useDispatch, saveResumeToLocalStorage } = props.use;
   const { useDispatch, saveResumeToLocalStorage } = props.func;
-  console.log(state, "what is this");
 
   const changeArrValue = e => {
     const currentLink = e.target.dataset.listId;

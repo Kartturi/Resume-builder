@@ -1,52 +1,55 @@
 import React from "react";
 import { useStateValue } from "../../../state";
-import getActionType from "../../../utils/getActionType";
 import { isArray } from "util";
 
-const Work = props => {
+const Recommends = props => {
   const [state, dispatch] = useStateValue();
 
   const { useDispatch, saveResumeToLocalStorage } = props.func;
+
   const changeStateValue = e => {
     //make totally new array
-    const newWorkStateCopy = state.work.concat();
+    const newWorkStateCopy = state.recommends.concat();
     const currentResumeNum = e.target.dataset.listId;
     const currentResumeInput = e.target.name;
     const newInputValue = e.target.value;
     //changeValue
+    console.log(currentResumeInput);
     newWorkStateCopy[currentResumeNum][currentResumeInput] = newInputValue;
 
     dispatch({
-      type: "CHANGE_WORK",
-      work: newWorkStateCopy
+      type: "CHANGE_RECOMMENDS",
+      recommends: newWorkStateCopy
     });
   };
-  const ListItem = state.work.map((item, index) => {
+
+  const ListItem = state.recommends.map((item, index) => {
+    console.log(item, "inside map");
     return (
       <li key={index}>
-        <h4>Position</h4>
+        <h4>Name and company</h4>
         <input
           type="text"
-          name="position"
-          value={item.position}
+          name="nameRecommends"
+          value={item.nameRecommends}
           data-list-id={index}
           onChange={changeStateValue}
           onBlur={saveResumeToLocalStorage}
         />
-        <h4>Time</h4>
+        <h4>Phone</h4>
         <input
           type="text"
-          name="time"
-          value={item.time}
+          name="phoneRecommends"
+          value={item.phoneRecommends}
           data-list-id={index}
           onChange={changeStateValue}
           onBlur={saveResumeToLocalStorage}
         />
-        <h4>Description</h4>
-        <textarea
+        <h4>Email</h4>
+        <input
           type="text"
-          name="desc"
-          value={item.desc}
+          name="email"
+          value={item.email}
           data-list-id={index}
           onChange={changeStateValue}
           onBlur={saveResumeToLocalStorage}
@@ -56,41 +59,40 @@ const Work = props => {
   });
 
   const handleClick = e => {
-    let newArray = state.work.concat();
+    let newArray = state.recommends.concat();
     if (e.target.textContent === "+") {
-      newArray.push({ position: "", time: "", desc: "" });
+      newArray.push({ nameRecommends: "", phoneRecommends: "" });
     } else {
       newArray.pop();
     }
 
     dispatch({
-      type: "CHANGE_WORK",
-      work: newArray
+      type: "CHANGE_RECOMMENDS",
+      recommends: newArray
     });
   };
 
   return (
-    <div className="edit-input__work">
+    <div className="edit-input__recommends">
       <label>
         <input
           onChange={useDispatch}
           onBlur={saveResumeToLocalStorage}
           type="text"
-          name="workTitle"
+          name="recommendsTitle"
           className="edit-input__title"
-          value={state.workTitle}
+          value={state.recommendsTitle}
         />
       </label>
 
       <ul>{ListItem}</ul>
       <button
         onClick={handleClick}
-        name="link"
         className="edit-input__button edit-input__button_add"
       >
         +
       </button>
-      {state.work.length > 1 ? (
+      {state.recommends.length > 1 ? (
         <button
           onClick={handleClick}
           name="link"
@@ -105,4 +107,4 @@ const Work = props => {
   );
 };
 
-export default Work;
+export default Recommends;

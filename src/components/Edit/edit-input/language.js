@@ -1,52 +1,46 @@
 import React from "react";
 import { useStateValue } from "../../../state";
-import getActionType from "../../../utils/getActionType";
 import { isArray } from "util";
 
-const Work = props => {
+const Language = props => {
   const [state, dispatch] = useStateValue();
 
   const { useDispatch, saveResumeToLocalStorage } = props.func;
+
   const changeStateValue = e => {
     //make totally new array
-    const newWorkStateCopy = state.work.concat();
+    const newWorkStateCopy = state.language.concat();
     const currentResumeNum = e.target.dataset.listId;
     const currentResumeInput = e.target.name;
     const newInputValue = e.target.value;
     //changeValue
+    console.log(currentResumeInput);
     newWorkStateCopy[currentResumeNum][currentResumeInput] = newInputValue;
 
     dispatch({
-      type: "CHANGE_WORK",
-      work: newWorkStateCopy
+      type: "CHANGE_LANGUAGE",
+      language: newWorkStateCopy
     });
   };
-  const ListItem = state.work.map((item, index) => {
+
+  const ListItem = state.language.map((item, index) => {
+    console.log(item, "inside map");
     return (
       <li key={index}>
-        <h4>Position</h4>
+        <h4>Language</h4>
         <input
           type="text"
-          name="position"
-          value={item.position}
+          name="language"
+          value={item.language}
           data-list-id={index}
           onChange={changeStateValue}
           onBlur={saveResumeToLocalStorage}
         />
-        <h4>Time</h4>
+        <h4>Level</h4>
         <input
           type="text"
-          name="time"
-          value={item.time}
-          data-list-id={index}
-          onChange={changeStateValue}
-          onBlur={saveResumeToLocalStorage}
-        />
-        <h4>Description</h4>
-        <textarea
-          type="text"
-          name="desc"
-          value={item.desc}
+          name="level"
+          value={item.level}
           data-list-id={index}
           onChange={changeStateValue}
           onBlur={saveResumeToLocalStorage}
@@ -56,41 +50,40 @@ const Work = props => {
   });
 
   const handleClick = e => {
-    let newArray = state.work.concat();
+    let newArray = state.language.concat();
     if (e.target.textContent === "+") {
-      newArray.push({ position: "", time: "", desc: "" });
+      newArray.push({ language: "", level: "" });
     } else {
       newArray.pop();
     }
 
     dispatch({
-      type: "CHANGE_WORK",
-      work: newArray
+      type: "CHANGE_LANGUAGE",
+      language: newArray
     });
   };
 
   return (
-    <div className="edit-input__work">
+    <div className="edit-input__language">
       <label>
         <input
           onChange={useDispatch}
           onBlur={saveResumeToLocalStorage}
           type="text"
-          name="workTitle"
+          name="languageTitle"
           className="edit-input__title"
-          value={state.workTitle}
+          value={state.languageTitle}
         />
       </label>
 
       <ul>{ListItem}</ul>
       <button
         onClick={handleClick}
-        name="link"
         className="edit-input__button edit-input__button_add"
       >
         +
       </button>
-      {state.work.length > 1 ? (
+      {state.language.length > 1 ? (
         <button
           onClick={handleClick}
           name="link"
@@ -105,4 +98,4 @@ const Work = props => {
   );
 };
 
-export default Work;
+export default Language;

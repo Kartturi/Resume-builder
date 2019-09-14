@@ -8,6 +8,9 @@ import getActionType from "../../utils/getActionType";
 import Link from "./edit-input/link";
 import Work from "./edit-input/work";
 import Education from "./edit-input/education";
+import Recommends from "./edit-input/recommends";
+import Projects from "./edit-input/projects";
+import Language from "./edit-input/language";
 
 const EditInput = () => {
   const [state, dispatch] = useStateValue();
@@ -109,6 +112,8 @@ const EditInput = () => {
       <Link func={{ useDispatch, saveResumeToLocalStorage }} />
       <Work func={{ useDispatch, saveResumeToLocalStorage }} />
       <Education func={{ useDispatch, saveResumeToLocalStorage }} />
+      <Projects func={{ useDispatch, saveResumeToLocalStorage }} />
+      <Language func={{ useDispatch, saveResumeToLocalStorage }} />
 
       <label>
         <input
@@ -130,6 +135,7 @@ const EditInput = () => {
           value={state.hobbies}
         />
       </label>
+      <Recommends func={{ useDispatch, saveResumeToLocalStorage }} />
     </div>
   );
 };

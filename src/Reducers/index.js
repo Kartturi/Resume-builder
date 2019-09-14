@@ -88,6 +88,42 @@ const reducer = (state, action) => {
         education: action.education
       };
 
+    case "CHANGE_RECOMMENDSTITLE":
+      return {
+        ...state,
+        recommendsTitle: action.recommendsTitle
+      };
+
+    case "CHANGE_RECOMMENDS":
+      return {
+        ...state,
+        recommends: action.recommends
+      };
+
+    case "CHANGE_PROJECTSTITLE":
+      return {
+        ...state,
+        projectsTitle: action.projectsTitle
+      };
+
+    case "CHANGE_PROJECTS":
+      return {
+        ...state,
+        projects: action.projects
+      };
+
+    case "CHANGE_LANGUAGETITLE":
+      return {
+        ...state,
+        languageTitle: action.languageTitle
+      };
+
+    case "CHANGE_LANGUAGE":
+      return {
+        ...state,
+        language: action.language
+      };
+
     default:
       return state;
   }
