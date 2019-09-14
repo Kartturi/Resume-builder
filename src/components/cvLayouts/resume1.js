@@ -57,6 +57,15 @@ const Resume1 = props => {
     );
   });
 
+  const skillsListItem = state.skills.map((item, index) => {
+    return (
+      <li key={index}>
+        <h4>{item.name}</h4>
+        <p>{item.level}</p>
+      </li>
+    );
+  });
+
   return (
     <div className="cv resume1">
       <div className="resume1-profile">
@@ -113,6 +122,13 @@ const Resume1 = props => {
           ) : (
             ""
           )}
+
+          <div className="resume1-skills">
+            <h3>{state.skillsTitle}</h3>
+            <ul>{skillsListItem}</ul>
+            <p></p>
+          </div>
+
           <div className="resume1-hobbies">
             <h3>{state.hobbiesTitle}</h3>
             <ul>{state.hobbies}</ul>

@@ -44,7 +44,10 @@ function getActionType(type) {
       return "CHANGE_PROJECTSTITLE";
 
     case "languageTitle":
-      return "CHANGE_languageTitle";
+      return "CHANGE_LANGUAGETITLE";
+
+    case "skillsTitle":
+      return "CHANGE_SKILLSTITLE";
 
     default:
       return "";

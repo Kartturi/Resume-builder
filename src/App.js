@@ -51,7 +51,9 @@ function App() {
         { name: "Thedasgame", time: "", desc: "opettele saksan kielen sanoja" }
       ],
       languageTitle: "Kielet",
-      language: [{ language: "Suomi", level: "Äidinkieli" }]
+      language: [{ language: "Suomi", level: "Äidinkieli" }],
+      skillsTitle: "Taidot",
+      skills: [{ name: "html", level: 5 }]
     };
   }
 

@@ -11,6 +11,7 @@ import Education from "./edit-input/education";
 import Recommends from "./edit-input/recommends";
 import Projects from "./edit-input/projects";
 import Language from "./edit-input/language";
+import Skills from "./edit-input/skills";
 
 const EditInput = () => {
   const [state, dispatch] = useStateValue();
@@ -29,6 +30,8 @@ const EditInput = () => {
   return (
     <div className="edit-input">
       <h2>Edit resume</h2>
+
+      <Skills func={{ useDispatch, saveResumeToLocalStorage }} />
 
       <label>
         <h4>Name</h4>

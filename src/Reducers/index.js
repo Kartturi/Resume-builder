@@ -124,6 +124,18 @@ const reducer = (state, action) => {
         language: action.language
       };
 
+    case "CHANGE_SKILLSTITLE":
+      return {
+        ...state,
+        skillsTitle: action.skillsTitle
+      };
+
+    case "CHANGE_SKILLS":
+      return {
+        ...state,
+        skills: action.skills
+      };
+
     default:
       return state;
   }
