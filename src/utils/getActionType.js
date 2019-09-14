@@ -25,6 +25,18 @@ function getActionType(type) {
     case "link":
       return "CHANGE_LINK";
 
+    case "hobbiesTitle":
+      return "CHANGE_HOBBIESTITLE";
+
+    case "hobbies":
+      return "CHANGE_HOBBIES";
+
+    case "workTitle":
+      return "CHANGE_WORKTITLE";
+
+    case "educationTitle":
+      return "CHANGE_EDUCATIONTITLE";
+
     default:
       return "";
   }

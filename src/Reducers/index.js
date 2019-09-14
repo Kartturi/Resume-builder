@@ -1,4 +1,5 @@
 const reducer = (state, action) => {
+  console.log(state, action.education, "reducer in aciton");
   switch (action.type) {
     case "CHANGE_NAME":
       return {
@@ -49,6 +50,42 @@ const reducer = (state, action) => {
       return {
         ...state,
         link: action.link
+      };
+
+    case "CHANGE_HOBBIESTITLE":
+      return {
+        ...state,
+        hobbiesTitle: action.hobbiesTitle
+      };
+
+    case "CHANGE_HOBBIES":
+      return {
+        ...state,
+        hobbies: action.hobbies
+      };
+
+    case "CHANGE_WORKTITLE":
+      return {
+        ...state,
+        workTitle: action.workTitle
+      };
+
+    case "CHANGE_WORK":
+      return {
+        ...state,
+        work: action.work
+      };
+
+    case "CHANGE_EDUCATIONTITLE":
+      return {
+        ...state,
+        educationTitle: action.educationTitle
+      };
+
+    case "CHANGE_EDUCATION":
+      return {
+        ...state,
+        education: action.education
       };
 
     default:

@@ -8,6 +8,26 @@ const Resume1 = props => {
     return <li key={index}>{item}</li>;
   });
 
+  const WorkListItem = state.work.map((item, index) => {
+    return (
+      <li key={index}>
+        <h4>{item.position}</h4>
+        <p>{item.time}</p>
+        <p>{item.desc}</p>
+      </li>
+    );
+  });
+
+  const EducationListItem = state.education.map((item, index) => {
+    return (
+      <li key={index}>
+        <h4>{item.school}</h4>
+        <p>{item.time}</p>
+        <p>{item.desc}</p>
+      </li>
+    );
+  });
+
   return (
     <div className="cv resume1">
       <div className="resume1-profile">
@@ -25,14 +45,14 @@ const Resume1 = props => {
             ""
           )}
 
-          <div className="resume1-experience">
-            {/* <h2>Työkokemus</h2>
-            <ul>
-              <li>
-                <h3>{output.experience[0].position}</h3>
-                <p>{output.experience[0].tasks}</p>
-              </li>
-            </ul> */}
+          <div className="resume1-experience ">
+            <h2>{state.workTitle}</h2>
+            <ul>{WorkListItem}</ul>
+          </div>
+
+          <div className="resume1-education ">
+            <h2>{state.educationTitle}</h2>
+            <ul>{EducationListItem}</ul>
           </div>
         </div>
         <div className="resume1-right">
@@ -55,6 +75,11 @@ const Resume1 = props => {
           ) : (
             ""
           )}
+          <div className="resume1-hobbies">
+            <h3>{state.hobbiesTitle}</h3>
+            <ul>{state.hobbies}</ul>
+            <p></p>
+          </div>
         </div>
       </div>
     </div>

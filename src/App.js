@@ -17,15 +17,27 @@ function App() {
     initialState = resume;
   } else {
     initialState = {
-      name: "",
-      title: "",
+      name: "Artturi",
+      title: "Web-kehittäjä",
       personal: "Yksityiskohtaiset tiedot",
-      phone: "",
-      email: "",
+      phone: "0406723633",
+      email: "artturi_hamalainen@hotmail.com",
       profileTitle: "Profiili",
-      profile: "",
+      profile: "Intohimoinen web-kehittäjä",
       linkTitle: "Linkit",
-      link: [""]
+      link: ["Porftfolio: www.kartturi.eu", "github.com"],
+      hobbiesTitle: "Harrastukset",
+      hobbies: "Jalkapallo, pyöräily",
+      workTitle: "Työkokemus",
+      work: [{ position: "Myyjä", time: "5/5", desc: "perkele" }],
+      educationTitle: "Koulutus",
+      education: [
+        {
+          school: "Vamk",
+          time: "syyskuu 2019 - joulukuu 2017",
+          desc: "kansainvälinen kauppa"
+        }
+      ]
     };
   }
 

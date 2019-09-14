@@ -3,7 +3,11 @@ import { useStateValue } from "../../state";
 
 //util
 import getActionType from "../../utils/getActionType";
+
+//components
 import Link from "./edit-input/link";
+import Work from "./edit-input/work";
+import Education from "./edit-input/education";
 
 const EditInput = () => {
   const [state, dispatch] = useStateValue();
@@ -82,8 +86,6 @@ const EditInput = () => {
           value={state.title}
         />
       </label>
-      <Link func={{ useDispatch, saveResumeToLocalStorage }} />
-
       <label>
         <input
           className="edit-input__title"
@@ -102,6 +104,30 @@ const EditInput = () => {
           type="text"
           name="profile"
           value={state.profile}
+        />
+      </label>
+      <Link func={{ useDispatch, saveResumeToLocalStorage }} />
+      <Work func={{ useDispatch, saveResumeToLocalStorage }} />
+      <Education func={{ useDispatch, saveResumeToLocalStorage }} />
+
+      <label>
+        <input
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
+          type="text"
+          name="hobbiesTitle"
+          className="edit-input__title"
+          value={state.hobbiesTitle}
+        />
+      </label>
+      <label>
+        <textarea
+          rows="2"
+          onChange={useDispatch}
+          onBlur={saveResumeToLocalStorage}
+          type="text"
+          name="hobbies"
+          value={state.hobbies}
         />
       </label>
     </div>

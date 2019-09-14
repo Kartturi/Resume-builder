@@ -87,4 +87,12 @@ body {
 .edit-input__link ul {
 }
 
+.edit-input__work ul li {
+  box-sizing: border-box;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border: 1px solid white;
+}
+
 /*edit-input end*/
