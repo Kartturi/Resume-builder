@@ -14,6 +14,9 @@ function getActionType(type) {
     case "email":
       return "CHANGE_EMAIL";
 
+    case "address":
+      return "CHANGE_ADDRESS";
+
     case "profileTitle":
       return "CHANGE_PROFILETITLE";
     case "profile":

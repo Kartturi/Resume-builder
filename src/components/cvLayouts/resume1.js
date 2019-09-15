@@ -61,7 +61,9 @@ const Resume1 = props => {
     return (
       <li key={index}>
         <h4>{item.name}</h4>
-        <p>{item.level}</p>
+        <div className="resume1-bar">
+          <div className={`resume1-bar-inner level-${item.level}`}></div>
+        </div>
       </li>
     );
   });
@@ -108,6 +110,7 @@ const Resume1 = props => {
               <h3>{state.personal}</h3>
               <p>{state.email}</p>
               <p>{state.phone}</p>
+              <p>{state.address}</p>
               <p></p>
             </div>
           ) : (

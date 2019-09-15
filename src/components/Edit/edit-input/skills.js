@@ -14,9 +14,9 @@ const Skills = props => {
     const currentResumeInput = e.target.name;
     const newInputValue = e.target.value;
     //changeValue
-    console.log(currentResumeInput);
+    console.log(newInputValue, e.target.name, currentResumeNum);
     newWorkStateCopy[currentResumeNum][currentResumeInput] = newInputValue;
-
+    console.log(newWorkStateCopy, "why this no work");
     dispatch({
       type: "CHANGE_SKILLS",
       skills: newWorkStateCopy
@@ -27,7 +27,7 @@ const Skills = props => {
     console.log(item, "inside map");
     return (
       <li key={index}>
-        <h4>Skills</h4>
+        <h4>Skill</h4>
         <input
           type="text"
           name="name"
@@ -37,14 +37,28 @@ const Skills = props => {
           onBlur={saveResumeToLocalStorage}
         />
         <h4>Level</h4>
-        <input
+        {/* <input
           type="text"
           name="level"
           value={item.level}
           data-list-id={index}
           onChange={changeStateValue}
           onBlur={saveResumeToLocalStorage}
-        />
+        /> */}
+        <select
+          name="level"
+          onChange={changeStateValue}
+          onBlur={saveResumeToLocalStorage}
+          value={item.level}
+          data-list-id={index}
+        >
+          <option value="0">Empty</option>
+          <option value="1">Beginner</option>
+          <option value="2">Fair</option>
+          <option value="3">Good</option>
+          <option value="4">very good</option>
+          <option value="5">Pro</option>
+        </select>
       </li>
     );
   });

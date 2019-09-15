@@ -3,60 +3,12 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { StateProvider } from "./state";
 import Reducer from "./Reducers/index";
-
+import initialState from "./initialState";
 //components
 import Dashboard from "./components/dashboard";
 import Edit from "./components/Edit/edit";
 
 function App() {
-  const resume = JSON.parse(localStorage.getItem("resume"));
-  let initialState;
-
-  //check if we have saved version in localhost and use that one for init state
-  if (resume) {
-    initialState = resume;
-  } else {
-    initialState = {
-      name: "Artturi",
-      title: "Web-kehittäjä",
-      personal: "Yksityiskohtaiset tiedot",
-      phone: "0406723633",
-      email: "artturi_hamalainen@hotmail.com",
-      profileTitle: "Profiili",
-      profile: "Intohimoinen web-kehittäjä",
-      linkTitle: "Linkit",
-      link: ["Porftfolio: www.kartturi.eu", "github.com"],
-      hobbiesTitle: "Harrastukset",
-      hobbies: "Jalkapallo, pyöräily",
-      workTitle: "Työkokemus",
-      work: [{ position: "Myyjä", time: "5/5", desc: "perkele" }],
-      educationTitle: "Koulutus",
-      education: [
-        {
-          school: "Vamk",
-          time: "syyskuu 2019 - joulukuu 2017",
-          desc: "kansainvälinen kauppa"
-        }
-      ],
-      recommendsTitle: "Suositukset",
-      recommends: [
-        {
-          nameRecommends: "Ari",
-          phoneRecommends: "05050",
-          email: "hotmail.com"
-        }
-      ],
-      projectsTitle: "Projektit",
-      projects: [
-        { name: "Thedasgame", time: "", desc: "opettele saksan kielen sanoja" }
-      ],
-      languageTitle: "Kielet",
-      language: [{ language: "Suomi", level: "Äidinkieli" }],
-      skillsTitle: "Taidot",
-      skills: [{ name: "html", level: 5 }]
-    };
-  }
-
   return (
     <Router>
       <StateProvider initialState={initialState} reducer={Reducer}>

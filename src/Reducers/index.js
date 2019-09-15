@@ -1,6 +1,9 @@
 const reducer = (state, action) => {
   console.log(state, action.education, "reducer in aciton");
   switch (action.type) {
+    case "CHANGE_RESUME":
+      return Object.assign({}, action.all);
+
     case "CHANGE_NAME":
       return {
         ...state,
@@ -28,6 +31,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         email: action.email
+      };
+
+    case "CHANGE_ADDRESS":
+      return {
+        ...state,
+        address: action.address
       };
     case "CHANGE_PROFILETITLE":
       return {

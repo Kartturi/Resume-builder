@@ -2,7 +2,7 @@ import React from "react";
 import { useStateValue } from "../../../state";
 import getActionType from "../../../utils/getActionType";
 
-const Link = props => {
+const Links = props => {
   const [state, dispatch] = useStateValue();
   //   const { useDispatch, saveResumeToLocalStorage } = props.use;
   const { useDispatch, saveResumeToLocalStorage } = props.func;
@@ -84,4 +84,4 @@ const Link = props => {
   );
 };
 
-export default Link;
+export default Links;
