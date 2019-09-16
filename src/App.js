@@ -7,7 +7,11 @@ import initialState from "./initialState";
 //components
 import Dashboard from "./components/dashboard";
 import Edit from "./components/Edit/edit";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
 
+library.add(faPlus);
 function App() {
   return (
     <Router>

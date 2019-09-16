@@ -1,5 +1,5 @@
 let initialState = {
-  resumeName: "resume",
+  resumeName: "cv name",
   name: "",
   title: "",
   personal: "Yksityiskohtaiset tiedot",
