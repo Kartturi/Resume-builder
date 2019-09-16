@@ -12,7 +12,7 @@ const Resume1 = props => {
       <li key={index}>
         <h4>{item.position}</h4>
         <p>{item.time}</p>
-        <p>{item.desc}</p>
+        <p className="resume1-text">{item.desc}</p>
       </li>
     );
   });
@@ -22,7 +22,7 @@ const Resume1 = props => {
       <li key={index}>
         <h4>{item.school}</h4>
         <p>{item.time}</p>
-        <p>{item.desc}</p>
+        <p className="resume1-text">{item.desc}</p>
       </li>
     );
   });
@@ -52,7 +52,7 @@ const Resume1 = props => {
       <li key={index}>
         <h4>{item.name}</h4>
         <p>{item.time}</p>
-        <p>{item.desc}</p>
+        <p className="resume1-text">{item.desc}</p>
       </li>
     );
   });
@@ -70,7 +70,8 @@ const Resume1 = props => {
 
   return (
     <div className="cv resume1">
-      <div className="resume1-profile">
+      <div className="resume1-indent">
+      <div className="resume1-head">
         <h1>{state.name}</h1>
         <p>{state.title}</p>
       </div>
@@ -107,7 +108,7 @@ const Resume1 = props => {
         <div className="resume1-right">
           {state.email || state.phone ? (
             <div className="resume1-personalInfo">
-              <h3>{state.personal}</h3>
+              <h4>{state.personal}</h4>
               <p>{state.email}</p>
               <p>{state.phone}</p>
               <p>{state.address}</p>
@@ -118,7 +119,7 @@ const Resume1 = props => {
           )}
           {state.link[0].length > 0 ? (
             <div className="resume1-links">
-              <h3>{state.linkTitle}</h3>
+              <h4>{state.linkTitle}</h4>
               <ul>{ListItem}</ul>
               <p></p>
             </div>
@@ -127,22 +128,23 @@ const Resume1 = props => {
           )}
 
           <div className="resume1-skills">
-            <h3>{state.skillsTitle}</h3>
+            <h4>{state.skillsTitle}</h4>
             <ul>{skillsListItem}</ul>
             <p></p>
           </div>
 
           <div className="resume1-hobbies">
-            <h3>{state.hobbiesTitle}</h3>
+            <h4>{state.hobbiesTitle}</h4>
             <ul>{state.hobbies}</ul>
             <p></p>
           </div>
           <div className="resume1-language">
-            <h3>{state.languageTitle}</h3>
+            <h4>{state.languageTitle}</h4>
             <ul>{LanguageListItem}</ul>
             <p></p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

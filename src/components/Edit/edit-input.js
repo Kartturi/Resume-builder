@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { useStateValue } from "../../state";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from "react-router-dom";
+
 
 //util
 import getActionType from "../../utils/getActionType";
@@ -31,7 +34,11 @@ const EditInput = props => {
 
   return (
     <div className="edit-input">
-      <h1>Edit resume</h1>
+      <div className="edit-input__head">
+        <Link to="/"><FontAwesomeIcon className="edit-input__head_icon" icon="arrow-left"/></Link>
+      
+        <h1>Edit resume</h1>
+      </div>
       <div className="edit-input__section">
         <label>
           <h4>Name</h4>
