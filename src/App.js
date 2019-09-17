@@ -7,6 +7,7 @@ import initialState from "./initialState";
 //components
 import Dashboard from "./components/dashboard";
 import Edit from "./components/Edit/edit";
+import Preview from "./components/Preview";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus , faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -19,6 +20,7 @@ function App() {
         <div className="App">
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/edit" component={Edit} />
+          <Route exact path="/preview" component={Preview} />
         </div>
       </StateProvider>
     </Router>

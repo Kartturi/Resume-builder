@@ -246,3 +246,38 @@ body {
 
 
 /*dashboard end*/
+
+
+/*Preview */
+.preview {
+  background-color: gray;
+}
+
+.preview-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+
+}
+
+.preview__download {
+  padding-top: 30px;
+  
+}
+
+.preview__download button {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.preview__download button:hover {
+  background-color: rgb(11, 117, 11);
+}
+
+/*Preview end*/

@@ -67,6 +67,7 @@ const duplicateResume = (e) => {
     return (
       <div className="dashboard-resumes__section" key={index} data-resume-index={index}>
         <Link to={`/edit?index=${index}`}>Edit</Link>
+        <Link to={`/preview?index=${index}`}>Preview</Link>
         <button  onClick={deleteResume} data-resume-index={index}>Delete</button>
         <button onClick={duplicateResume} data-resume-index={index}>Duplicate</button>
         <input onChange={changeResumeName} data-resume-index={index} className="dashboard-resumes__section_name" value={item.resumeName}/>
