@@ -13,6 +13,10 @@ html {
   height: 100%;
 }
 
+ul {
+  list-style-type: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -59,7 +63,7 @@ body {
   font-size: 20px;
   margin-right: 15px;
   cursor: pointer;
-  color:black;
+  color: black;
 }
 
 .edit-input__head_icon:hover {
@@ -188,10 +192,9 @@ body {
   background-color: white;
   border-radius: 10px;
   border: 1px solid black;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-
 }
 
 .dashboard-resumes__section_container {
@@ -220,8 +223,6 @@ body {
   cursor: text;
 }
 
-
-
 .dashboard-resumes__section_name {
   width: 100%;
   background-color: white;
@@ -243,16 +244,13 @@ body {
 .dashboard-resumes__add {
   font-size: 48px;
   cursor: pointer;
-
 }
 
 .dashboard-resumes__add:hover {
   color: blue;
 }
 
-
 /*dashboard end*/
-
 
 /*Preview */
 .preview {
@@ -262,13 +260,10 @@ body {
 .preview-container {
   padding-top: 30px;
   padding-bottom: 30px;
-
-
 }
 
 .preview__download {
   padding-top: 30px;
-  
 }
 
 .preview__download button {

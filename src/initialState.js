@@ -1,40 +1,70 @@
 let initialState = {
   layout: "resume1",
   resumeName: "new resume",
-  name: "",
-  title: "",
+  name: "Artturi Hämäläinen",
+  title: "Web-kehittäjä",
   personal: "Personal info",
-  phone: "",
-  email: "",
-  address: "",
+  phone: "0406723633",
+  email: "artturi_hamalainen@hotmail.com",
+  address: "Laivurinkatu 2 b32",
   profileTitle: "Profile",
-  profile: "",
+  profile: "Hyvä tyyppi",
   linkTitle: "Links",
-  link: [""],
+  link: ["kotisivut:www.kartturi.eu"],
   hobbiesTitle: "Hobbies",
-  hobbies: "",
+  hobbies: "äänikirjat, ulkoilu, futis",
   workTitle: "Work experience",
-  work: [{ position: "", time: "", desc: "" }],
+  work: [
+    {
+      position: "Ylitoope",
+      time: "huhtikuu 2019-toukokuu 2020",
+      desc: "Ylitoopen tehtäviä oli tarjolla"
+    },
+    {
+      position: "Ylitoope",
+      time: "huhtikuu 2019-toukokuu 2020",
+      desc: "Ylitoopen tehtäviä oli tarjolla"
+    }
+  ],
   educationTitle: "Education",
   education: [
     {
-      school: "",
-      time: "",
-      desc: ""
+      school: "Toopekoulu",
+      time: "huhtikuu 2019-toukokuu 2020",
+      desc: "Ylitoopen tehtäviä oli tarjolla"
+    },
+    {
+      school: "Toopekoulu",
+      time: "huhtikuu 2019-toukokuu 2020",
+      desc: "Ylitoopen tehtäviä oli tarjolla"
     }
   ],
   recommendsTitle: "Recommendations",
   recommends: [
     {
-      nameRecommends: "",
-      phoneRecommends: "",
+      nameRecommends: "Ari Mäkinen",
+      phoneRecommends: "04040404",
+      email: ""
+    },
+    {
+      nameRecommends: "Niko Heikkilä",
+      phoneRecommends: "04040404",
       email: ""
     }
   ],
   projectsTitle: "Projects",
-  projects: [{ name: "", time: "", desc: "" }],
+  projects: [
+    {
+      name: "Thedasgame",
+      time: "5.19.2017-5.4.2020",
+      desc: "Opettele saksan kielen sanoja"
+    }
+  ],
   languageTitle: "Languages",
-  language: [{ language: "", level: "" }],
+  language: [
+    { language: "Suomi", level: "Äidinkieli" },
+    { language: "Englanti", level: "Erinomainen" }
+  ],
   skillsTitle: "Skills",
   skills: [{ name: "", level: 0 }]
 };

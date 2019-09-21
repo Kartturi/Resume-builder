@@ -4,7 +4,11 @@ const Resume2 = props => {
   const [state] = useStateValue();
 
   const ListItem = state.link.map((item, index) => {
-    return <li key={index}>{item}</li>;
+    return (
+      <li key={index}>
+        <p>{item}</p>
+      </li>
+    );
   });
 
   const WorkListItem = state.work.map((item, index) => {
@@ -68,108 +72,18 @@ const Resume2 = props => {
   });
   return (
     <div className="cv resume2">
-      <div className="resume2-indent">
-        <div className="resume2-head">
-          <h1>{state.name}</h1>
-          <p>{state.title}</p>
+      <div className="resume2__content">
+        <div className="resume2__head">
+          <div className="resume2__head__content">
+            <div className="resume2__head__content_links">
+              <ul>{ListItem}</ul>
+            </div>
+            <h1>{state.name}</h1>
+          </div>
         </div>
-        <div className="resume2-lower-container">
-          <div className="resume2-left">
-            {state.profile ? (
-              <div className="resume2-profile">
-                <h2>{state.profileTitle}</h2>
-                <p>{state.profile}</p>
-              </div>
-            ) : (
-              ""
-            )}
-            {state.work[0].position ? (
-              <div className="resume2-experience ">
-                <h2>{state.workTitle}</h2>
-                <ul>{WorkListItem}</ul>
-              </div>
-            ) : (
-              ""
-            )}
-            {state.education[0].school ? (
-              <div className="resume2-education ">
-                <h2>{state.educationTitle}</h2>
-                <ul>{EducationListItem}</ul>
-              </div>
-            ) : (
-              ""
-            )}
-
-            {state.projects[0].name ? (
-              <div className="resume2-projects ">
-                <h2>{state.projectsTitle}</h2>
-                <ul>{projectsListItem}</ul>
-              </div>
-            ) : (
-              ""
-            )}
-
-            {state.recommends[0].nameRecommends ? (
-              <div className="resume2-recommends ">
-                <h2>{state.recommendsTitle}</h2>
-                <ul>{recommendsListItem}</ul>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-
-          <div className="resume2-right">
-            {state.email || state.phone ? (
-              <div className="resume2-personalInfo">
-                <h4>{state.personal}</h4>
-                <p>{state.email}</p>
-                <p>{state.phone}</p>
-                <p>{state.address}</p>
-                <p></p>
-              </div>
-            ) : (
-              ""
-            )}
-            {state.link[0].length > 0 ? (
-              <div className="resume2-links">
-                <h4>{state.linkTitle}</h4>
-                <ul>{ListItem}</ul>
-                <p></p>
-              </div>
-            ) : (
-              ""
-            )}
-
-            {state.skills[0].name ? (
-              <div className="resume2-skills">
-                <h4>{state.skillsTitle}</h4>
-                <ul>{skillsListItem}</ul>
-                <p></p>
-              </div>
-            ) : (
-              ""
-            )}
-            {state.hobbies ? (
-              <div className="resume2-hobbies">
-                <h4>{state.hobbiesTitle}</h4>
-                <ul>{state.hobbies}</ul>
-                <p></p>
-              </div>
-            ) : (
-              ""
-            )}
-
-            {state.language[0].language ? (
-              <div className="resume2-language">
-                <h4>{state.languageTitle}</h4>
-                <ul>{LanguageListItem}</ul>
-                <p></p>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+        <div className="resume2__profile">
+          <h4>{state.profileTitle}</h4>
+          <p>{state.profile}</p>
         </div>
       </div>
     </div>
