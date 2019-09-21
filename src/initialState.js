@@ -16,11 +16,13 @@ let initialState = {
   workTitle: "Work experience",
   work: [
     {
+      company: "realia oy",
       position: "Ylitoope",
       time: "huhtikuu 2019-toukokuu 2020",
       desc: "Ylitoopen tehtäviä oli tarjolla"
     },
     {
+      company: "realia oy",
       position: "Ylitoope",
       time: "huhtikuu 2019-toukokuu 2020",
       desc: "Ylitoopen tehtäviä oli tarjolla"

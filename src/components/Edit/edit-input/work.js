@@ -24,6 +24,15 @@ const Work = props => {
   const ListItem = state.work.map((item, index) => {
     return (
       <li key={index}>
+        <h4>company</h4>
+        <input
+          type="text"
+          name="company"
+          value={item.company}
+          data-list-id={index}
+          onChange={changeStateValue}
+          onBlur={saveResumeToLocalStorage}
+        />
         <h4>Position</h4>
         <input
           type="text"

@@ -167,15 +167,21 @@
   text-align: left;
 }
 
-.resume2 h4 {
+.resume2 h2 {
   font-size: 24px;
   border-bottom: 3px solid #333e50;
   margin-top: 30px;
   color: #5c5a5a;
 }
 
+.resume2 h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .resume2 p {
-  font-size: 14px;
+  font-size: 16px;
+  margin-top: 15px;
 }
 
 .resume2__content {
@@ -206,4 +212,44 @@
   margin-left: 30px;
   margin-right: 30px;
 }
+
+.resume2__skills {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.resume2__skills ul {
+  list-style-type: disc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.resume2__skills ul li {
+  width: 50%;
+}
+.resume2__skills ul li:last-child {
+  list-style: none;
+}
+
+.resume2__skills p {
+  margin-top: 0px;
+}
+
+.resume2__work {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.resume2__work li {
+  margin-top: 15px;
+}
+
+.resume2__work span {
+  font-weight: normal;
+}
+
 /*resume2 end */

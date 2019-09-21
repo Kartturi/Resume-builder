@@ -14,8 +14,10 @@ const Resume2 = props => {
   const WorkListItem = state.work.map((item, index) => {
     return (
       <li key={index}>
-        <h4>{item.position}</h4>
-        <p>{item.time}</p>
+        <h3>
+          {item.position} <span>{item.time}</span>
+        </h3>
+        <h3> {item.company}</h3>
         <p className="resume2-text">{item.desc}</p>
       </li>
     );
@@ -24,8 +26,11 @@ const Resume2 = props => {
   const EducationListItem = state.education.map((item, index) => {
     return (
       <li key={index}>
-        <h4>{item.school}</h4>
-        <p>{item.time}</p>
+        <h3>
+          {item.school}
+          <span>{item.time}</span>
+        </h3>
+
         <p className="resume2-text">{item.desc}</p>
       </li>
     );
@@ -44,7 +49,7 @@ const Resume2 = props => {
   const recommendsListItem = state.recommends.map((item, index) => {
     return (
       <li key={index}>
-        <h4>{item.nameRecommends}</h4>
+        <h2>{item.nameRecommends}</h2>
         <p>{item.phoneRecommends}</p>
         <p>{item.email}</p>
       </li>
@@ -53,7 +58,7 @@ const Resume2 = props => {
   const projectsListItem = state.projects.map((item, index) => {
     return (
       <li key={index}>
-        <h4>{item.name}</h4>
+        <h2>{item.name}</h2>
         <p>{item.time}</p>
         <p className="resume2-text">{item.desc}</p>
       </li>
@@ -63,10 +68,7 @@ const Resume2 = props => {
   const skillsListItem = state.skills.map((item, index) => {
     return (
       <li key={index}>
-        <h4>{item.name}</h4>
-        <div className="resume2-bar">
-          <div className={`resume2-bar-inner level-${item.level}`}></div>
-        </div>
+        <p>{item.name}</p>
       </li>
     );
   });
@@ -82,8 +84,23 @@ const Resume2 = props => {
           </div>
         </div>
         <div className="resume2__profile">
-          <h4>{state.profileTitle}</h4>
+          <h2>{state.profileTitle}</h2>
           <p>{state.profile}</p>
+        </div>
+        <div className="resume2__skills">
+          <h2>{state.skillsTitle}</h2>
+          <ul>
+            {skillsListItem} <li></li>
+          </ul>
+        </div>
+
+        <div className="resume2__work">
+          <h2>{state.workTitle}</h2>
+          <ul>{WorkListItem}</ul>
+        </div>
+        <div className="resume2__education">
+          <h2>{state.educationTitle}</h2>
+          <ul>{EducationListItem}</ul>
         </div>
       </div>
     </div>
