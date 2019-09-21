@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useStateValue } from "../../state";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-
 
 //util
 import getActionType from "../../utils/getActionType";
@@ -35,11 +34,28 @@ const EditInput = props => {
   return (
     <div className="edit-input">
       <div className="edit-input__head">
-        <Link to="/"><FontAwesomeIcon className="edit-input__head_icon" icon="arrow-left"/></Link>
-      
+        <Link to="/">
+          <FontAwesomeIcon
+            className="edit-input__head_icon"
+            icon="arrow-left"
+          />
+        </Link>
+
         <h1>Edit resume</h1>
       </div>
       <div className="edit-input__section">
+        <label>
+          <h4>Layout</h4>
+          <select
+            name="layout"
+            onChange={useDispatch}
+            onBlur={saveResumeToLocalStorage}
+            value={state.layout}
+          >
+            <option value="resume1">resume1</option>
+            <option value="resume2">resume2</option>
+          </select>
+        </label>
         <label>
           <h4>Name</h4>
           <input

@@ -1,20 +1,21 @@
 let initialState = {
-  resumeName: "cv name",
+  layout: "resume1",
+  resumeName: "new resume",
   name: "",
   title: "",
-  personal: "Yksityiskohtaiset tiedot",
+  personal: "Personal info",
   phone: "",
   email: "",
   address: "",
-  profileTitle: "Profiili",
+  profileTitle: "Profile",
   profile: "",
-  linkTitle: "Linkit",
+  linkTitle: "Links",
   link: [""],
-  hobbiesTitle: "",
+  hobbiesTitle: "Hobbies",
   hobbies: "",
-  workTitle: "Työkokemus",
+  workTitle: "Work experience",
   work: [{ position: "", time: "", desc: "" }],
-  educationTitle: "Koulutus",
+  educationTitle: "Education",
   education: [
     {
       school: "",
@@ -22,7 +23,7 @@ let initialState = {
       desc: ""
     }
   ],
-  recommendsTitle: "Suositukset",
+  recommendsTitle: "Recommendations",
   recommends: [
     {
       nameRecommends: "",
@@ -30,11 +31,11 @@ let initialState = {
       email: ""
     }
   ],
-  projectsTitle: "Projektit",
+  projectsTitle: "Projects",
   projects: [{ name: "", time: "", desc: "" }],
-  languageTitle: "Kielet",
+  languageTitle: "Languages",
   language: [{ language: "", level: "" }],
-  skillsTitle: "",
+  skillsTitle: "Skills",
   skills: [{ name: "", level: 0 }]
 };
 

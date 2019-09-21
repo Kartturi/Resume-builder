@@ -1,6 +1,6 @@
 import React from "react";
 import { useStateValue } from "../../state";
-const Resume1 = props => {
+const Resume2 = props => {
   const [state] = useStateValue();
 
   const ListItem = state.link.map((item, index) => {
@@ -12,7 +12,7 @@ const Resume1 = props => {
       <li key={index}>
         <h4>{item.position}</h4>
         <p>{item.time}</p>
-        <p className="resume1-text">{item.desc}</p>
+        <p className="resume2-text">{item.desc}</p>
       </li>
     );
   });
@@ -22,7 +22,7 @@ const Resume1 = props => {
       <li key={index}>
         <h4>{item.school}</h4>
         <p>{item.time}</p>
-        <p className="resume1-text">{item.desc}</p>
+        <p className="resume2-text">{item.desc}</p>
       </li>
     );
   });
@@ -51,7 +51,7 @@ const Resume1 = props => {
       <li key={index}>
         <h4>{item.name}</h4>
         <p>{item.time}</p>
-        <p className="resume1-text">{item.desc}</p>
+        <p className="resume2-text">{item.desc}</p>
       </li>
     );
   });
@@ -60,23 +60,23 @@ const Resume1 = props => {
     return (
       <li key={index}>
         <h4>{item.name}</h4>
-        <div className="resume1-bar">
-          <div className={`resume1-bar-inner level-${item.level}`}></div>
+        <div className="resume2-bar">
+          <div className={`resume2-bar-inner level-${item.level}`}></div>
         </div>
       </li>
     );
   });
   return (
-    <div className="cv resume1">
-      <div className="resume1-indent">
-        <div className="resume1-head">
+    <div className="cv resume2">
+      <div className="resume2-indent">
+        <div className="resume2-head">
           <h1>{state.name}</h1>
           <p>{state.title}</p>
         </div>
-        <div className="resume1-lower-container">
-          <div className="resume1-left">
+        <div className="resume2-lower-container">
+          <div className="resume2-left">
             {state.profile ? (
-              <div className="resume1-profile">
+              <div className="resume2-profile">
                 <h2>{state.profileTitle}</h2>
                 <p>{state.profile}</p>
               </div>
@@ -84,7 +84,7 @@ const Resume1 = props => {
               ""
             )}
             {state.work[0].position ? (
-              <div className="resume1-experience ">
+              <div className="resume2-experience ">
                 <h2>{state.workTitle}</h2>
                 <ul>{WorkListItem}</ul>
               </div>
@@ -92,7 +92,7 @@ const Resume1 = props => {
               ""
             )}
             {state.education[0].school ? (
-              <div className="resume1-education ">
+              <div className="resume2-education ">
                 <h2>{state.educationTitle}</h2>
                 <ul>{EducationListItem}</ul>
               </div>
@@ -101,7 +101,7 @@ const Resume1 = props => {
             )}
 
             {state.projects[0].name ? (
-              <div className="resume1-projects ">
+              <div className="resume2-projects ">
                 <h2>{state.projectsTitle}</h2>
                 <ul>{projectsListItem}</ul>
               </div>
@@ -110,7 +110,7 @@ const Resume1 = props => {
             )}
 
             {state.recommends[0].nameRecommends ? (
-              <div className="resume1-recommends ">
+              <div className="resume2-recommends ">
                 <h2>{state.recommendsTitle}</h2>
                 <ul>{recommendsListItem}</ul>
               </div>
@@ -119,9 +119,9 @@ const Resume1 = props => {
             )}
           </div>
 
-          <div className="resume1-right">
+          <div className="resume2-right">
             {state.email || state.phone ? (
-              <div className="resume1-personalInfo">
+              <div className="resume2-personalInfo">
                 <h4>{state.personal}</h4>
                 <p>{state.email}</p>
                 <p>{state.phone}</p>
@@ -132,7 +132,7 @@ const Resume1 = props => {
               ""
             )}
             {state.link[0].length > 0 ? (
-              <div className="resume1-links">
+              <div className="resume2-links">
                 <h4>{state.linkTitle}</h4>
                 <ul>{ListItem}</ul>
                 <p></p>
@@ -142,7 +142,7 @@ const Resume1 = props => {
             )}
 
             {state.skills[0].name ? (
-              <div className="resume1-skills">
+              <div className="resume2-skills">
                 <h4>{state.skillsTitle}</h4>
                 <ul>{skillsListItem}</ul>
                 <p></p>
@@ -151,7 +151,7 @@ const Resume1 = props => {
               ""
             )}
             {state.hobbies ? (
-              <div className="resume1-hobbies">
+              <div className="resume2-hobbies">
                 <h4>{state.hobbiesTitle}</h4>
                 <ul>{state.hobbies}</ul>
                 <p></p>
@@ -161,7 +161,7 @@ const Resume1 = props => {
             )}
 
             {state.language[0].language ? (
-              <div className="resume1-language">
+              <div className="resume2-language">
                 <h4>{state.languageTitle}</h4>
                 <ul>{LanguageListItem}</ul>
                 <p></p>
@@ -176,4 +176,4 @@ const Resume1 = props => {
   );
 };
 
-export default Resume1;
+export default Resume2;

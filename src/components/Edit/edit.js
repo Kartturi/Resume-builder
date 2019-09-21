@@ -23,7 +23,7 @@ const Edit = props => {
   return (
     <div className="edit-container">
       <EditInput index={index} />
-      <EditPreview />
+      <EditPreview state={state} />
     </div>
   );
 };

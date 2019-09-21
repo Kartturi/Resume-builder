@@ -14,9 +14,7 @@ const Skills = props => {
     const currentResumeInput = e.target.name;
     const newInputValue = e.target.value;
     //changeValue
-    console.log(newInputValue, e.target.name, currentResumeNum);
     newWorkStateCopy[currentResumeNum][currentResumeInput] = newInputValue;
-    console.log(newWorkStateCopy, "why this no work");
     dispatch({
       type: "CHANGE_SKILLS",
       skills: newWorkStateCopy
@@ -24,7 +22,6 @@ const Skills = props => {
   };
 
   const ListItem = state.skills.map((item, index) => {
-    console.log(item, "inside map");
     return (
       <li key={index}>
         <h4>Skill</h4>

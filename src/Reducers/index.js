@@ -4,6 +4,12 @@ const reducer = (state, action) => {
     case "CHANGE_RESUME":
       return Object.assign({}, action.all);
 
+    case "CHANGE_LAYOUT":
+      return {
+        ...state,
+        layout: action.layout
+      };
+
     case "CHANGE_NAME":
       return {
         ...state,

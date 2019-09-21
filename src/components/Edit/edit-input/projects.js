@@ -22,7 +22,6 @@ const Projects = props => {
   };
 
   const ListItem = state.projects.map((item, index) => {
-    console.log(item, "inside map");
     return (
       <li key={index}>
         <h4>Name</h4>

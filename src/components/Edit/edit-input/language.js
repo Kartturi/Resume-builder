@@ -14,7 +14,6 @@ const Language = props => {
     const currentResumeInput = e.target.name;
     const newInputValue = e.target.value;
     //changeValue
-    console.log(currentResumeInput);
     newWorkStateCopy[currentResumeNum][currentResumeInput] = newInputValue;
 
     dispatch({
@@ -24,7 +23,6 @@ const Language = props => {
   };
 
   const ListItem = state.language.map((item, index) => {
-    console.log(item, "inside map");
     return (
       <li key={index}>
         <h4>Language</h4>

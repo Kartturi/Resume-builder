@@ -1,5 +1,8 @@
 function getActionType(type) {
   switch (type) {
+    case "layout":
+      return "CHANGE_LAYOUT";
+
     case "name":
       return "CHANGE_NAME";
 
