@@ -58,8 +58,10 @@ const Resume2 = props => {
   const projectsListItem = state.projects.map((item, index) => {
     return (
       <li key={index}>
-        <h2>{item.name}</h2>
-        <p>{item.time}</p>
+        <h3>
+          {item.name} <span>{item.time}</span>
+        </h3>
+
         <p className="resume2-text">{item.desc}</p>
       </li>
     );
@@ -101,6 +103,10 @@ const Resume2 = props => {
         <div className="resume2__education">
           <h2>{state.educationTitle}</h2>
           <ul>{EducationListItem}</ul>
+        </div>
+        <div className="resume2__projects">
+          <h2>{state.projectsTitle}</h2>
+          <ul>{projectsListItem}</ul>
         </div>
       </div>
     </div>

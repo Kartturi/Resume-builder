@@ -26,12 +26,14 @@ const Preview = props => {
   }, []);
 
   const donwloadResume = e => {
-    const filename = "resume.pdf";
-    html2canvas(document.querySelector(".cv"), { scale: 1 }).then(canvas => {
-      let pdf = new jsPDF("p", "mm", "a4");
-      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
-      pdf.save(filename);
-    });
+    console.log(window.print());
+
+    // const filename = "resume.pdf";
+    // html2canvas(document.querySelector(".cv"), { scale: 1 }).then(canvas => {
+    //   let pdf = new jsPDF("p", "mm", "a4");
+    //   pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
+    //   pdf.save(filename);
+    // });
     console.log(e.target);
   };
 
@@ -51,6 +53,7 @@ const Preview = props => {
   return (
     <div className="preview">
       <div className="preview__download">
+        <style>{`@media print {.preview__download{display: none;} .preview {background:white}}`}</style>
         <select name="layout" onChange={changeLayout} value={state.layout}>
           <option value="resume1">resume1</option>
           <option value="resume2">resume2</option>

@@ -37,9 +37,16 @@ body {
 
 .edit-preview {
   width: 70%;
+
   height: 100%;
   background: rgb(228, 233, 228);
   overflow: auto;
+}
+
+.edit-preview__container {
+  max-width: 210mm;
+  min-height: 290mm;
+  margin: 30px auto;
 }
 
 /* Edit end */
@@ -254,7 +261,7 @@ body {
 
 /*Preview */
 .preview {
-  background-color: gray;
+  background: rgb(154, 156, 154);
 }
 
 .preview-container {

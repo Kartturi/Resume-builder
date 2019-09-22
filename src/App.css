@@ -32,12 +32,6 @@
   }
 }
 
-/*edit-preview*/
-.edit-preview {
-  background-color: gray;
-}
-/*edit-preview end*/
-
 .preview-container {
   width: 210mm;
   min-height: 297mm;
@@ -60,14 +54,23 @@
   list-style-type: none;
 }
 
+.resume1 h1 {
+  font-size: 24px;
+}
+
+.resume1 h2 {
+  font-size: 20px;
+}
+
 .resume1 h4 {
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
 .resume1 p {
   width: 100%;
+  font-size: 12px;
   word-break: normal;
 }
 
@@ -170,7 +173,7 @@
 .resume2 h2 {
   font-size: 24px;
   border-bottom: 3px solid #333e50;
-  margin-top: 30px;
+
   color: #5c5a5a;
 }
 
@@ -188,6 +191,11 @@
   width: 80%;
   margin: 0 auto;
 }
+
+.resume2__content > * {
+  margin-bottom: 30px;
+}
+
 .resume2__head {
   background: #333e50;
   color: #fefefc;
@@ -264,6 +272,17 @@
 
 .resume2__education span {
   font-weight: normal;
+}
+
+.resume2__projects {
+  margin-left: 30px;
+}
+
+.resume2__projects span {
+  font-weight: normal;
+}
+.resume2__projects p {
+  margin-top: 0px;
 }
 
 /*resume2 end */

@@ -9,7 +9,9 @@ const EditPreview = props => {
 
   return (
     <div className="edit-preview">
-      <div className="preview ">{SelectLayout(state.layout)}</div>
+      <div className="edit-preview__container">
+        {SelectLayout(state.layout)}
+      </div>
     </div>
   );
 };
