@@ -3,6 +3,8 @@ import { getResumesLS } from "../utils/getSetResumes";
 import { useStateValue } from "../state";
 import SelectLayout from "../utils/selectLayout";
 import getActionType from "../utils/getActionType";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 //components
 
@@ -24,6 +26,12 @@ const Preview = props => {
   }, []);
 
   const donwloadResume = e => {
+    const filename = "resume.pdf";
+    html2canvas(document.querySelector(".cv"), { scale: 1 }).then(canvas => {
+      let pdf = new jsPDF("p", "mm", "a4");
+      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
+      pdf.save(filename);
+    });
     console.log(e.target);
   };
 

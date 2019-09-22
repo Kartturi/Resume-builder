@@ -68,7 +68,13 @@ let initialState = {
     { language: "Englanti", level: "Erinomainen" }
   ],
   skillsTitle: "Skills",
-  skills: [{ name: "", level: 0 }]
+  skills: [
+    { name: "js", level: 0 },
+    { name: "js", level: 0 },
+    { name: "js", level: 0 },
+    { name: "js", level: 0 },
+    { name: "js", level: 0 }
+  ]
 };
 
 export default initialState;

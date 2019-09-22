@@ -27,7 +27,7 @@ const Resume2 = props => {
     return (
       <li key={index}>
         <h3>
-          {item.school}
+          {item.school + " "}
           <span>{item.time}</span>
         </h3>
 

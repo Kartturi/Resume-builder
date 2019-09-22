@@ -266,6 +266,15 @@ body {
   padding-top: 30px;
 }
 
+.preview__download select {
+  margin-right: 30px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
 .preview__download button {
   font-size: 20px;
   border: none;
