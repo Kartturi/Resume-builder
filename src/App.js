@@ -8,11 +8,27 @@ import initialState from "./initialState";
 import Dashboard from "./components/dashboard";
 import Edit from "./components/Edit/edit";
 import Preview from "./components/Preview";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus , faArrowLeft} from '@fortawesome/free-solid-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlus,
+  faArrowLeft,
+  faUser,
+  faSuitcase,
+  faDesktop,
+  faGraduationCap,
+  faBullhorn
+} from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
-library.add(faPlus, faArrowLeft);
+library.add(
+  faPlus,
+  faArrowLeft,
+  faUser,
+  faSuitcase,
+  faDesktop,
+  faGraduationCap,
+  faBullhorn
+);
 function App() {
   return (
     <Router>

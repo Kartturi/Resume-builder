@@ -1,5 +1,7 @@
 import React from "react";
 import { useStateValue } from "../../state";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Resume1 = props => {
   const [state] = useStateValue();
 
@@ -30,9 +32,8 @@ const Resume1 = props => {
   const LanguageListItem = state.language.map((item, index) => {
     return (
       <li key={index}>
-        <p>
-          {item.language} <span>{item.level}</span>
-        </p>
+        <p>{item.language}</p>
+        <p>{item.level}</p>
       </li>
     );
   });
@@ -68,6 +69,10 @@ const Resume1 = props => {
   });
   return (
     <div className="cv resume1">
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700&display=swap');
+      </style>
       <div className="resume1-indent">
         <div className="resume1-head">
           <h1>{state.name}</h1>
@@ -77,6 +82,7 @@ const Resume1 = props => {
           <div className="resume1-left">
             {state.profile ? (
               <div className="resume1-profile">
+                <FontAwesomeIcon className="resume1-icons" icon="user" />
                 <h2>{state.profileTitle}</h2>
                 <p>{state.profile}</p>
               </div>
@@ -85,6 +91,7 @@ const Resume1 = props => {
             )}
             {state.work[0].position ? (
               <div className="resume1-experience ">
+                <FontAwesomeIcon className="resume1-icons" icon="suitcase" />
                 <h2>{state.workTitle}</h2>
                 <ul>{WorkListItem}</ul>
               </div>
@@ -93,6 +100,10 @@ const Resume1 = props => {
             )}
             {state.education[0].school ? (
               <div className="resume1-education ">
+                <FontAwesomeIcon
+                  className="resume1-icons"
+                  icon="graduation-cap"
+                />
                 <h2>{state.educationTitle}</h2>
                 <ul>{EducationListItem}</ul>
               </div>
@@ -102,6 +113,7 @@ const Resume1 = props => {
 
             {state.projects[0].name ? (
               <div className="resume1-projects ">
+                <FontAwesomeIcon className="resume1-icons" icon="desktop" />
                 <h2>{state.projectsTitle}</h2>
                 <ul>{projectsListItem}</ul>
               </div>
@@ -111,6 +123,7 @@ const Resume1 = props => {
 
             {state.recommends[0].nameRecommends ? (
               <div className="resume1-recommends ">
+                <FontAwesomeIcon className="resume1-icons" icon="bullhorn" />
                 <h2>{state.recommendsTitle}</h2>
                 <ul>{recommendsListItem}</ul>
               </div>
@@ -122,7 +135,7 @@ const Resume1 = props => {
           <div className="resume1-right">
             {state.email || state.phone ? (
               <div className="resume1-personalInfo">
-                <h4>{state.personal}</h4>
+                <h2>{state.personal}</h2>
                 <p>{state.email}</p>
                 <p>{state.phone}</p>
                 <p>{state.address}</p>
@@ -133,7 +146,7 @@ const Resume1 = props => {
             )}
             {state.link[0].length > 0 ? (
               <div className="resume1-links">
-                <h4>{state.linkTitle}</h4>
+                <h2>{state.linkTitle}</h2>
                 <ul>{ListItem}</ul>
                 <p></p>
               </div>
@@ -143,7 +156,7 @@ const Resume1 = props => {
 
             {state.skills[0].name ? (
               <div className="resume1-skills">
-                <h4>{state.skillsTitle}</h4>
+                <h2>{state.skillsTitle}</h2>
                 <ul>{skillsListItem}</ul>
                 <p></p>
               </div>
@@ -152,8 +165,8 @@ const Resume1 = props => {
             )}
             {state.hobbies ? (
               <div className="resume1-hobbies">
-                <h4>{state.hobbiesTitle}</h4>
-                <ul>{state.hobbies}</ul>
+                <h2>{state.hobbiesTitle}</h2>
+                <p>{state.hobbies}</p>
                 <p></p>
               </div>
             ) : (
@@ -162,7 +175,7 @@ const Resume1 = props => {
 
             {state.language[0].language ? (
               <div className="resume1-language">
-                <h4>{state.languageTitle}</h4>
+                <h2>{state.languageTitle}</h2>
                 <ul>{LanguageListItem}</ul>
                 <p></p>
               </div>
