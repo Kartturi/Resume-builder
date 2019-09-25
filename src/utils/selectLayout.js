@@ -6,10 +6,10 @@ import Resume2 from "../components/cvLayouts/resume2";
 
 const SelectLayout = layout => {
   switch (layout) {
-    case "resume1":
+    case "Turku":
       return <Resume1 />;
 
-    case "resume2":
+    case "Vaasa":
       return <Resume2 />;
 
     default:

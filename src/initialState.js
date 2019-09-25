@@ -1,5 +1,5 @@
 let initialState = {
-  layout: "resume1",
+  layout: "Turku",
   resumeName: "new resume",
   name: "Artturi Hämäläinen",
   title: "Web-kehittäjä ja digimarkkinoija",

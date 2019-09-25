@@ -226,14 +226,19 @@ body {
   margin: 0 auto;
 }
 
-.dashboard-resumes__section input {
-  cursor: text;
+.dashboard-resumes__section input,
+.dashboard-resumes__section select {
+  border: 2px solid lightblue;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 90%;
+  padding: 10px 0px 10px 0px;
 }
 
 .dashboard-resumes__section_name {
   width: 100%;
   background-color: white;
-  padding: 10px 0px 10px 0px;
+  cursor: text;
 }
 
 .dashboard-resumes__add_container {

@@ -95,8 +95,8 @@ const Dashboard = () => {
           data-resume-index={index}
           value={item.layout}
         >
-          <option value="resume1">resume1</option>
-          <option value="resume2">resume2</option>
+          <option value="resume1">Turku</option>
+          <option value="resume2">Vaasa</option>
         </select>
         <input
           onChange={changeResumeName}

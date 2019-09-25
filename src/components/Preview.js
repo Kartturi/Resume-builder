@@ -3,6 +3,8 @@ import { getResumesLS } from "../utils/getSetResumes";
 import { useStateValue } from "../state";
 import SelectLayout from "../utils/selectLayout";
 import getActionType from "../utils/getActionType";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
@@ -26,7 +28,7 @@ const Preview = props => {
   }, []);
 
   const donwloadResume = e => {
-    console.log(window.print());
+    window.print();
 
     // const filename = "resume.pdf";
     // html2canvas(document.querySelector(".cv"), { scale: 1 }).then(canvas => {
@@ -34,7 +36,6 @@ const Preview = props => {
     //   pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
     //   pdf.save(filename);
     // });
-    console.log(e.target);
   };
 
   const changeLayout = e => {
@@ -54,9 +55,15 @@ const Preview = props => {
     <div className="preview">
       <div className="preview__download">
         <style>{`@media print {.preview__download{display: none;} .preview {background:white}}`}</style>
+        <Link to="/">
+          <FontAwesomeIcon
+            className="edit-input__head_icon"
+            icon="arrow-left"
+          />
+        </Link>
         <select name="layout" onChange={changeLayout} value={state.layout}>
-          <option value="resume1">resume1</option>
-          <option value="resume2">resume2</option>
+          <option value="Turku">Turku</option>
+          <option value="Vaasa">Vaasa</option>
         </select>
         <button onClick={donwloadResume}>Download Pdf</button>
       </div>

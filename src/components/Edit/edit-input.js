@@ -52,8 +52,8 @@ const EditInput = props => {
             onBlur={saveResumeToLocalStorage}
             value={state.layout}
           >
-            <option value="resume1">resume1</option>
-            <option value="resume2">resume2</option>
+            <option value="Turku">Turku</option>
+            <option value="Vaasa">Vaasa</option>
           </select>
         </label>
         <label>
