@@ -64,6 +64,7 @@ const Preview = props => {
         <select name="layout" onChange={changeLayout} value={state.layout}>
           <option value="Turku">Turku</option>
           <option value="Vaasa">Vaasa</option>
+          <option value="Rauma">Rauma</option>
         </select>
         <button onClick={donwloadResume}>Download Pdf</button>
       </div>
