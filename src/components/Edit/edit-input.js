@@ -184,7 +184,7 @@ const EditInput = props => {
       </label>
       <label>
         <textarea
-          rows="2"
+          rows="10"
           onChange={useDispatch}
           onBlur={saveResumeToLocalStorage}
           type="text"
