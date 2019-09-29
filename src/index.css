@@ -131,7 +131,7 @@ body {
 
 .edit-input input,
 .edit-input textarea,
-select {
+.edit-input select {
   display: block;
   margin: 0 auto;
   margin-bottom: 15px;
