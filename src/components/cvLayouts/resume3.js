@@ -1,16 +1,11 @@
 import React from "react";
 import { useStateValue } from "../../state";
 import "./styles/resume3.css";
+import ProfilePicture from "../../img/artturi19.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Resume3 = props => {
   const [state] = useStateValue();
-
-  const ListItem = state.link.map((item, index) => {
-    return (
-      <li key={index}>
-        <p>{item}</p>
-      </li>
-    );
-  });
 
   const WorkListItem = state.work.map((item, index) => {
     return (
@@ -57,11 +52,22 @@ const Resume3 = props => {
     return (
       <li key={index}>
         <h3>
-          {item.name} <span>{item.time}</span>
+          {item.name}, <span>{item.time}</span>
         </h3>
 
         <p className="resume3-text">{item.desc}</p>
       </li>
+    );
+  });
+
+  const linkListItem = state.link.map((item, index) => {
+    return (
+      <p key={index}>
+        <span>
+          <FontAwesomeIcon icon="link" />
+        </span>
+        {item}
+      </p>
     );
   });
 
@@ -78,7 +84,48 @@ const Resume3 = props => {
         @import
         url('https://fonts.googleapis.com/css?family=Roboto:300i,400,700i&display=swap');
       </style>
-      <div className="resume3__left"></div>
+      <div className="resume3__left">
+        <div className="resume3__img-container">
+          <img className="resume3__img" src={ProfilePicture} />
+        </div>
+
+        <div className="resume3__personal">
+          <p>
+            <span>
+              <FontAwesomeIcon icon="phone-alt" />
+            </span>
+            {state.phone}
+          </p>
+          <p>
+            <span>
+              <FontAwesomeIcon icon="envelope" />
+            </span>
+            {state.email}
+          </p>
+          {linkListItem}
+          <p>
+            {" "}
+            <span>
+              <FontAwesomeIcon icon="map-marker-alt" />
+            </span>
+            {state.address}
+          </p>
+        </div>
+        <div className="resume3__text_container">
+          <div className="resume3__profile">
+            <h2>{state.profileTitle}</h2>
+            <p>{state.profile}</p>
+          </div>
+          <div className="resume3__projects">
+            <h2>{state.projectsTitle}</h2>
+            <ul>{projectsListItem}</ul>
+          </div>
+          <div className="resume3__projects">
+            <h2>{state.hobbiesTitle}</h2>
+            <p>{state.hobbies}</p>
+          </div>
+        </div>
+      </div>
       <div className="resume3__right">
         <div className="resume3__right__name-title">
           <h1>{state.name}</h1>

@@ -111,6 +111,19 @@
   padding-top: 30px;
   margin-bottom: 30px;
   text-align: left;
+  position: relative;
+}
+
+.resume1-head > * {
+  margin-left: 60px;
+}
+
+.resume1-head__img {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: -80px;
+  top: 20px;
 }
 
 .resume1-lower-container {
