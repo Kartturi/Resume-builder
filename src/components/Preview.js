@@ -67,6 +67,7 @@ const Preview = props => {
           <option value="Turku">Turku</option>
           <option value="Vaasa">Vaasa</option>
           <option value="Rauma">Rauma</option>
+          <option value="Pori">Pori</option>
         </select>
         <button onClick={donwloadResume}>Download Pdf</button>
       </div>

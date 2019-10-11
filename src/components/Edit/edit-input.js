@@ -55,6 +55,7 @@ const EditInput = props => {
             <option value="Turku">Turku</option>
             <option value="Vaasa">Vaasa</option>
             <option value="Rauma">Rauma</option>
+            <option value="Pori">Pori</option>
           </select>
         </label>
         <label>

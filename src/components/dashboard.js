@@ -97,6 +97,8 @@ const Dashboard = () => {
         >
           <option value="resume1">Turku</option>
           <option value="resume2">Vaasa</option>
+          <option value="resume3">Rauma</option>
+          <option value="resume4">Pori</option>
         </select>
         <input
           onChange={changeResumeName}
